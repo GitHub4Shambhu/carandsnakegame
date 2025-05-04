@@ -1,7 +1,13 @@
 import pygame
 import os
 import math
-import random  # Add missing random import
+import random
+
+# Import game components
+from car import Car
+from snake import Snake
+from human import Human
+from powerup import PowerUp
 
 class Game:
     # Colors
@@ -120,11 +126,6 @@ class Game:
         return rect.collidepoint(pos)
     
     def init_game_objects(self):
-        from car import Car
-        from snake import Snake
-        from human import Human
-        from powerup import PowerUp
-        
         settings = self.DIFFICULTIES[self.difficulty]
         
         # Create game objects
@@ -224,8 +225,6 @@ class Game:
                     self.difficulty = 'hard'
     
     def handle_playing(self):
-        from powerup import PowerUp
-        
         # Handle events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -292,11 +291,6 @@ class Game:
                 snake.move_towards(nearest_human.rect.x, nearest_human.rect.y)
     
     def handle_collisions(self):
-        from car import Car
-        from snake import Snake
-        from human import Human
-        from powerup import PowerUp
-        
         # Car-Snake collisions
         for i, car in enumerate(self.cars):
             if car.health <= 0:
@@ -477,6 +471,5 @@ class Game:
 
 # Start the game
 if __name__ == "__main__":
-    import random
     game = Game()
     game.run()
