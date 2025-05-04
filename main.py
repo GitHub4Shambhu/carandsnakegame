@@ -25,7 +25,7 @@ class Game:
         
         # Set up display
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
-        pygame.display.set_caption("Car and Snake Game")
+        pygame.display.set_caption("Car and Snake Game - Pro Edition")
         
         # Set game icon
         current_dir = os.path.dirname(os.path.abspath(__file__))
